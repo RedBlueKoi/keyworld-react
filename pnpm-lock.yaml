@@ -1,6 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@mdi/js': ^6.9.96
+  '@mdi/react': ^1.6.0
   '@redux-devtools/core': ^3.13.1
   '@reduxjs/toolkit': ^1.8.3
   '@rushstack/eslint-patch': ^1.1.4
@@ -29,6 +31,8 @@ dependencies:
   redux: 4.2.0
 
 devDependencies:
+  '@mdi/js': 6.9.96
+  '@mdi/react': 1.6.0
   '@redux-devtools/core': 3.13.1_3ehcaq2n4jukulvcxg5dqcyv5y
   '@reduxjs/toolkit': 1.8.3_kkwg4cbsojnjnupd3btipussee
   '@rushstack/eslint-patch': 1.1.4
@@ -383,6 +387,16 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
+    dev: true
+
+  /@mdi/js/6.9.96:
+    resolution: {integrity: sha512-rK0/vLFaiItYS2W7uVmaKPKnhNQE4XVkylpk5njtVwENnp8elwY5uRL6qvdj2esuvUHG7DwygE4Qu3eKxxuJiQ==}
+    dev: true
+
+  /@mdi/react/1.6.0:
+    resolution: {integrity: sha512-FdeJ3Ee+m9nbBkZXW0XgSkDvevgOCloLRFrBlF6pRGWgT8v2U1M2aeXi8+uRM5FZ58o3dfVFduAtmCq7quclNA==}
+    dependencies:
+      prop-types: 15.8.1
     dev: true
 
   /@nodelib/fs.scandir/2.1.5:

@@ -14,6 +14,8 @@
     "redux": "^4.2.0"
   },
   "devDependencies": {
+    "@mdi/js": "^6.9.96",
+    "@mdi/react": "^1.6.0",
     "@redux-devtools/core": "^3.13.1",
     "@reduxjs/toolkit": "^1.8.3",
     "@rushstack/eslint-patch": "^1.1.4",
