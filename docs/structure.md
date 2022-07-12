@@ -57,4 +57,4 @@ In this folder you can keep all the store slices. Just don't forget to add them 
 
 ## Future folder you might want to create
 
-At some point you probably might want to create additional folders to structure your code. I can see how folders like `custom-hooks` and `api` might get usefull.
+At some point you probably might want to create additional folders to structure your code. I can see how folders like `custom-hooks`, `assets` and `api` might get usefull.
