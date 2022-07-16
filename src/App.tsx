@@ -9,6 +9,8 @@ import Success from "./views/Success"
 import Category from "./views/Category"
 import Icon from "@mdi/react"
 import { mdiHome } from "@mdi/js"
+import { Footer } from "./components/footer"
+
 
 function App() {
   return (
@@ -35,6 +37,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </header>
+      <Footer />
     </div>
   )
 }
