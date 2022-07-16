@@ -4,6 +4,7 @@ import About from "./views/About"
 import Home from "./views/Home"
 import Icon from "@mdi/react"
 import { mdiHome } from "@mdi/js"
+import { Footer } from "./components/footer"
 
 function App() {
   return (
@@ -15,12 +16,14 @@ function App() {
         </Link>
         <Link to="about">About</Link>
       </div>
+
       <header className="App-header">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="about" element={<About />} />
         </Routes>
       </header>
+      <Footer />
     </div>
   )
 }
