@@ -8,6 +8,11 @@ To run the project:
 - pnpm install
 - pnpm dev --open
 
+## Helpful links
+
+- [Figma design](https://www.figma.com/file/zlybQ1JGSEea6whqLS9CHl/Keyworld-project?node-id=0%3A1)
+- [Icon set](https://materialdesignicons.com/)
+
 ## More info
 
 You can find the rest of the documentation here:
