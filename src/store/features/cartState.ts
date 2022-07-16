@@ -18,22 +18,25 @@ interface Perks {
   price: number
   type: string
 }
-
-const initialState = { value: [] as Array<Product> }
+interface CartState {
+  products: Product[]
+}
+const initialState: CartState = { products: [] }
 
 const cartSlice = createSlice({
   name: "cartState",
   initialState,
   reducers: {
     addProduct(state, action: PayloadAction<Product>) {
-      state.value.push(action.payload)
+      state.products.push(action.payload)
     },
     removeProduct(state, action: PayloadAction<Product>) {
-      const res = state.value.filter((item) => item !== action.payload)
-      state.value = res
+      state.products = state.products.filter(
+        (item) => item.name !== action.payload.name
+      )
     },
     clearCart(state) {
-      state.value = []
+      state.products = []
     }
   }
 })
