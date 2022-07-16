@@ -26,8 +26,11 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="checkout" element={<Checkout />} />
-          <Route path="product" element={<Product />} />
-          <Route path="category" element={<Category />} />
+          <Route path="category/:categoryUrl" element={<Category />} />
+          <Route
+            path="category/:categoryUrl/:productUrl"
+            element={<Product />}
+          />
           <Route path="success" element={<Success />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
