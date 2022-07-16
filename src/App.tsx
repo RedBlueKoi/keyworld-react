@@ -4,11 +4,11 @@ import About from "./views/About"
 import Home from "./views/Home"
 import Checkout from "./views/Checkout"
 import NotFound from "./views/NotFound"
-import Icon from "@mdi/react"
-import { mdiHome } from "@mdi/js"
 import Product from "./views/Product"
 import Success from "./views/Success"
 import Category from "./views/Category"
+import Icon from "@mdi/react"
+import { mdiHome } from "@mdi/js"
 
 function App() {
   return (
