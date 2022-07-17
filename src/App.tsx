@@ -9,7 +9,7 @@ import Success from "./views/Success"
 import Category from "./views/Category"
 import Icon from "@mdi/react"
 import { mdiHome } from "@mdi/js"
-import { Footer } from "./components/footer"
+import Footer from "./components/footer/footer"
 
 
 function App() {
