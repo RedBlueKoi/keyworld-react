@@ -1,28 +1,18 @@
 import { FC } from "react"
-import { increment } from "@/store/features/counter"
-import { useAppDispatch, useAppSelector } from "@/store/hooks"
-
-import logo from "@/logo.svg"
-
+import CategoryCard from "@/components/CategoryCard"
 const Home: FC = () => {
-  const dispatch = useAppDispatch()
-  const { value } = useAppSelector((state) => state.counter)
-  const onIncrement = () => {
-    dispatch(increment())
-  }
-
   return (
     <div>
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>Hello Vite + React!</p>
-      <p>
-        <button type="button" onClick={onIncrement}>
-          count is: {value}
-        </button>
-      </p>
-      <p>
-        Edit <code>App.tsx</code> and save to test HMR updates.
-      </p>
+      <h1 className={"text-black text-left mb-6 px-3"}>Categories</h1>
+      <div className="flex space-between gap-3 flex-wrap px-3">
+        <CategoryCard />
+        <br />
+        <CategoryCard />
+        <br />
+        <CategoryCard />
+        <br />
+        <CategoryCard />
+      </div>
     </div>
   )
 }
