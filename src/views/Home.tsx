@@ -1,5 +1,5 @@
 import { FC } from "react"
-import CategoryCard from "@/components/CategoryCard"
+import { CategoryCard } from "@/components/CategoryCard"
 
 const Home: FC = () => {
   const categories = [
