@@ -1,11 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
 export interface Product {
-  category: string
+  category: Category
   description: string
   images: string[]
   name: string
   perks: Perks
+  price: number
+  type: string
 }
 interface Perks {
   ANSI: boolean
@@ -15,8 +17,12 @@ interface Perks {
   material: string
   splitSpacebar: boolean
   weight: string
-  price: number
-  type: string
+}
+export interface Category {
+  name: string
+  description: string
+  isDisabled: boolean
+  img: string
 }
 interface CartState {
   products: Product[]
