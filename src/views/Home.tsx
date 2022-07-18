@@ -1,18 +1,21 @@
 import { FC } from "react"
 import { CategoryCard } from "@/components/CategoryCard"
+import PageTitle from "@/components/PageTitle/PageTitle"
+import { Category } from "@/store/features/cartState"
 
 const Home: FC = () => {
-  const categories = [
-    { name: "Category 1", linkTo: "/categories/1", img: "" },
-    { name: "Category 2", linkTo: "/categories/2", img: "" },
-    { name: "Category 3", linkTo: "/categories/3", img: "" }
+  const categories: Category[] = [
+    { name: "Category 1", description: "", isDisabled: false, img: "" },
+    { name: "Category 2", description: "", isDisabled: false, img: "" },
+    { name: "Category 3", description: "", isDisabled: false, img: "" }
   ]
+
   return (
     <div>
-      <h1 className={"text-black text-left mb-6 px-3"}>Categories</h1>
+      <PageTitle title="Categories" />
       <div className="flex space-between gap-3 flex-wrap px-3">
         {categories.map((category, key) => (
-          <CategoryCard {...category} key={key} />
+          <CategoryCard category={category} key={key} />
         ))}
       </div>
     </div>
