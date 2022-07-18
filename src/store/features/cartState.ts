@@ -6,6 +6,8 @@ export interface Product {
   images: string[]
   name: string
   perks: Perks
+  price: number
+  type: string
 }
 interface Perks {
   ANSI: boolean
@@ -15,8 +17,6 @@ interface Perks {
   material: string
   splitSpacebar: boolean
   weight: string
-  price: number
-  type: string
 }
 interface CartState {
   products: Product[]
