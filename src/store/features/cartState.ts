@@ -18,7 +18,7 @@ interface Perks {
   splitSpacebar: boolean
   weight: string
 }
-interface Category {
+export interface Category {
   name: string
   description: string
   isDisabled: boolean
