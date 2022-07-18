@@ -9,21 +9,22 @@ import Success from "./views/Success"
 import Category from "./views/Category"
 import Icon from "@mdi/react"
 import { mdiHome } from "@mdi/js"
-import Footer from "./components/footer/footer"
-
+import { Footer } from "./components/footer"
 
 function App() {
   return (
-    <div className="App">
-      <div className="flex justify-center items-center gap-4">
+    <div className="App grid min-h-screen scroll-smooth">
+      <header className="flex justify-center items-center gap-4" id="top">
         <Link to="/" className="flex items-center">
           Home
           <Icon path={mdiHome} title="Home link" size={1} />
         </Link>
         <Link to="about">About</Link>
         <Link to="checkout">Checkout</Link>
-      </div>
-      <header className="App-header">
+        <a href="#top">top</a>
+        <a href="#bottom">bottom</a>
+      </header>
+      <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="about" element={<About />} />
@@ -36,7 +37,7 @@ function App() {
           <Route path="success" element={<Success />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </header>
+      </main>
       <Footer />
     </div>
   )
