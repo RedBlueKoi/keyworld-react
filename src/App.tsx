@@ -20,6 +20,7 @@ function App() {
         </Link>
         <Link to="about">About</Link>
         <Link to="checkout">Checkout</Link>
+        <Link to="error">Error</Link>
       </div>
       <header className="App-header">
         <Routes>
