@@ -14,7 +14,7 @@ import { Footer } from "./components/footer"
 function App() {
   return (
     <div className="App grid min-h-screen scroll-smooth">
-      <header className="flex justify-center items-center gap-4" id="top">
+      <header className="flex justify-center items-center gap-4">
         <Link to="/" className="flex items-center">
           Home
           <Icon path={mdiHome} title="Home link" size={1} />
