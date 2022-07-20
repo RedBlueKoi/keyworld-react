@@ -21,8 +21,6 @@ function App() {
         </Link>
         <Link to="about">About</Link>
         <Link to="checkout">Checkout</Link>
-        <a href="#top">top</a>
-        <a href="#bottom">bottom</a>
       </header>
       <main>
         <Routes>

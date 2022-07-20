@@ -1,28 +1,25 @@
-import { FC } from "react"
-import { increment } from "@/store/features/counter"
-import { useAppDispatch, useAppSelector } from "@/store/hooks"
-
-import logo from "@/logo.svg"
+import { FC, useMemo } from "react"
+import { CategoryCard } from "@/components/CategoryCard"
+import PageTitle from "@/components/PageTitle/PageTitle"
+import { useCategories } from "@/custom-hooks/api"
 
 const Home: FC = () => {
-  const dispatch = useAppDispatch()
-  const { value } = useAppSelector((state) => state.counter)
-  const onIncrement = () => {
-    dispatch(increment())
-  }
+  const { categories, areCategoriesLoading } = useCategories()
+  const reanderedCategories = useMemo(() => {
+    return categories.map((category) => (
+      <CategoryCard category={category} key={category.name} />
+    ))
+  }, [categories])
+
+  if (areCategoriesLoading) return <div>Loading...</div>
+  if (!categories.length) return <div>Empty</div>
 
   return (
     <div>
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>Hello Vite + React!</p>
-      <p>
-        <button type="button" onClick={onIncrement}>
-          count is: {value}
-        </button>
-      </p>
-      <p>
-        Edit <code>App.tsx</code> and save to test HMR updates.
-      </p>
+      <PageTitle title="Categories" />
+      <div className="flex space-between gap-3 flex-wrap px-3">
+        {reanderedCategories}
+      </div>
     </div>
   )
 }
