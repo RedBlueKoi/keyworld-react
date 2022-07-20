@@ -1,19 +1,17 @@
 import { FC } from "react"
-import './NotFound.css';
 
 const NotFound: FC = () => {
-
-  
-
   return (
- <body >
-  <div >
-  <div className="error404">Error 404</div>
-  <div className="errortext"> <span>Oh no! It seems that the page you were trying to look for doesn’t exist!
-   <br/>Please try again later or start over from the </span><a href='/' className="errorhomepageword"  >Homepage</a></div>
-
-  </div>
-  </body>
+    <div className="text-primary max-w-xl flex flex-col gap-4">
+      <h1 className="text-4xl">Error 404</h1>
+      <div className="text-lg">
+        Oh no! It seems that the page you were trying to look for doesn’t exist!
+        Please try again later or start over from the{" "}
+        <a href="/" className="underline">
+          Homepage
+        </a>
+      </div>
+    </div>
   )
 }
 
