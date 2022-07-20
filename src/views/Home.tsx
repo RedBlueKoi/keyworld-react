@@ -1,14 +1,13 @@
 import { FC } from "react"
 import { CategoryCard } from "@/components/CategoryCard"
 import PageTitle from "@/components/PageTitle/PageTitle"
-import { Category } from "@/store/features/cartState"
+import { useCategories } from "@/custom-hooks/api"
 
 const Home: FC = () => {
-  const categories: Category[] = [
-    { name: "Category 1", description: "", isDisabled: false, img: "" },
-    { name: "Category 2", description: "", isDisabled: false, img: "" },
-    { name: "Category 3", description: "", isDisabled: false, img: "" }
-  ]
+  const { categories, areCategoriesLoading } = useCategories()
+
+  if (areCategoriesLoading) return <div>Loading...</div>
+  if (!categories.length) return <div>Empty</div>
 
   return (
     <div>
