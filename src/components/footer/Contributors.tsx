@@ -37,7 +37,7 @@ const Contributors: FC = () => {
   ]
 
   const rendered = contributors.map((contributor) => (
-    <li>
+    <li key={contributor.link}>
       <a
         target="_blank"
         className="link-primary"
