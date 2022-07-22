@@ -13,7 +13,7 @@ import { Footer } from "./components/footer"
 
 function App() {
   return (
-    <div className="App grid min-h-screen scroll-smooth bg-default_background">
+    <div className="App grid min-h-screen scroll-smooth bg-defaultBackground">
       <header className="flex justify-center items-center gap-4">
         <Link to="/" className="flex items-center">
           Home
