@@ -27,3 +27,7 @@
 button {
   font-size: calc(10px + 2vmin);
 }
+
+.default-container {
+  @apply mx-auto px-4;
+}

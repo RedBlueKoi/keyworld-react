@@ -33,6 +33,10 @@ const Contributors: FC = () => {
     {
       link: "https://github.com/yuzdzhan",
       name: "Yuzdzhan"
+    },
+    {
+      link: "https://github.com/grandslammer",
+      name: "Ivan White"
     }
   ]
 
