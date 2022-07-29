@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { collection, getDocs } from "firebase/firestore"
+import { collection, doc, getDocs, query, where } from "firebase/firestore"
 import { Product } from "@/types"
 import db from "./firestore"
 import { useLocation } from "react-router-dom"
@@ -8,7 +8,8 @@ interface Props {
   categoryId?: string
 }
 
-const useProducts = () => {
+const useProducts = (props: Props) => {
+  const { categoryId } = props
   const [products, setProducts] = useState<Product[]>([])
   const [areProductsLoading, setLoading] = useState<boolean>(true)
 
@@ -23,14 +24,23 @@ const useProducts = () => {
     setLoading(false)
   }
 
-  {
-    /* TODO Add implementation for fetching product with some key
-  key can be a mapping to signify relation with category
-*/
+  const getFiltered = async () => {
+    try {
+      const categoryCollection = collection(db, "categories")
+      const productsCollection = collection(db, "products")
+      const categoryRef = doc(categoryCollection, categoryId)
+      console.log(categoryRef)
+      const q = query(productsCollection, where("category", "==", categoryRef))
+      const response = await getDocs(q)
+      setProducts(response.docs.map((doc) => doc.data() as Product))
+    } catch (error) {
+      console.log(error)
+    }
+    setLoading(false)
   }
 
   useEffect(() => {
-    onInit()
+    categoryId ? getFiltered() : onInit()
   }, [])
 
   return { products, areProductsLoading }

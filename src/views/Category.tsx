@@ -3,7 +3,7 @@ import useProducts from "@/custom-hooks/api/useProducts"
 import { FC, useMemo } from "react"
 
 const Category: FC = () => {
-  const { products, areProductsLoading } = useProducts()
+  const { products, areProductsLoading } = useProducts({})
 
   const renderProducts = useMemo(() => {
     return products.map((item) => (
