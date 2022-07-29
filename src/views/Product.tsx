@@ -9,7 +9,7 @@ const Product: FC = () => {
   return (
     <>
       <BreadCrumbs />
-      <div className="flex flex-wrap">
+      <div className="flex justify-around flex-wrap">
         <ProductPhoto />
         <ProductDescription />
       </div>
