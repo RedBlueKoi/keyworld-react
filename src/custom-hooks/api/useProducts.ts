@@ -2,14 +2,12 @@ import { useState, useEffect } from "react"
 import { collection, doc, getDocs, query, where } from "firebase/firestore"
 import { Product } from "@/types"
 import db from "./firestore"
-import { useLocation } from "react-router-dom"
 
 interface Props {
   categoryId?: string
 }
 
-const useProducts = (props: Props) => {
-  const { categoryId } = props
+const useProducts = ({ categoryId }: Props) => {
   const [products, setProducts] = useState<Product[]>([])
   const [areProductsLoading, setLoading] = useState<boolean>(true)
 
@@ -29,7 +27,6 @@ const useProducts = (props: Props) => {
       const categoryCollection = collection(db, "categories")
       const productsCollection = collection(db, "products")
       const categoryRef = doc(categoryCollection, categoryId)
-      console.log(categoryRef)
       const q = query(productsCollection, where("category", "==", categoryRef))
       const response = await getDocs(q)
       setProducts(response.docs.map((doc) => doc.data() as Product))

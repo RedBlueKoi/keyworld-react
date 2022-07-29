@@ -12,6 +12,7 @@ const Category: FC = () => {
   }, [products])
 
   if (areProductsLoading) return <div>Products are loading</div>
+  if (!products.length) return <div>Can't find any products</div>
 
   return (
     <div className="flex flex-wrap place-content-center">{renderProducts}</div>
