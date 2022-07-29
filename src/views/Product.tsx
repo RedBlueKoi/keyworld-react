@@ -1,8 +1,8 @@
 import { FC } from "react"
-import { Product as ProductInterface } from "@/types"
+import { Product } from "@/types"
 
 interface Props {
-  product?: ProductInterface
+  product?: Product
 }
 
 const Product: FC<Props> = ({ product }: Props) => {
