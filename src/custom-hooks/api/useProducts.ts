@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { collection, getDocs } from "firebase/firestore"
 import { Product } from "@/types"
 import db from "./firestore"
+import { useLocation } from "react-router-dom"
 
 interface Props {
   categoryId?: string
@@ -18,9 +19,8 @@ const useProducts = () => {
       setProducts(response.docs.map((doc) => doc.data() as Product))
     } catch (error) {
       console.log(error)
-    } finally {
-      setLoading(false)
     }
+    setLoading(false)
   }
 
   {

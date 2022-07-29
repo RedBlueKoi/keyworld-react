@@ -11,7 +11,7 @@ const CategoryCard: FC<Props> = ({ category }: Props) => {
   return (
     <Link
       to={`/category/${slug}`}
-      className="bg-slate-700 rounded-lg p-3 shadow-2xl w-full h-[220px] md:w-[220px] text-neutral-200">
+      className="bg-primary rounded-lg p-3 shadow-2xl w-full h-[220px] md:w-[220px] text-white">
       {category.name}
     </Link>
   )
