@@ -4,21 +4,24 @@ import { FC, useMemo } from "react"
 import { useLocation } from "react-router-dom"
 
 const Category: FC = () => {
-  const location = useLocation().pathname
-  const { products, isProductLoading } = useProducts()
-  
-  console.log(products)
+  const { pathname } = useLocation()
+  const { products, areProductsLoading } = useProducts()
+
   const renderProducts = useMemo(() => {
-    return ( products.map( item => <ProductCard product={item}/>))
-  } ,[products])
+    return products.map((item) => <ProductCard product={item} />)
+  }, [products])
 
   return (
     <div>
       {/* This will utilize product component */}
-      {isProductLoading && "Products are loading"}
-      <div className="flex flex-wrap place-content-center">
-        <div>{renderProducts}</div>
-      </div>
+      {areProductsLoading && "Products are loading"}
+      {products.length != 0 ? (
+        <div className="flex flex-wrap place-content-center">
+          <div>{renderProducts}</div>
+        </div>
+      ) : (
+        "No Products in this Category !"
+      )}
     </div>
   )
 }

@@ -1,15 +1,15 @@
-import React, { useState } from "react"
+import { useState, useEffect } from "react"
 import { collection, getDocs } from "firebase/firestore"
 import { Product } from "@/types"
 import db from "./firestore"
 
 interface Props {
-  CategoryId?: string | undefined
+  categoryId?: string
 }
 
 const useProducts = () => {
   const [products, setProducts] = useState<Product[]>([])
-  const [isProductLoading, setIsProductLoading] = useState<Boolean>(true)
+  const [areProductsLoading, setLoading] = useState<boolean>(true)
 
   const onInit = async () => {
     try {
@@ -19,7 +19,7 @@ const useProducts = () => {
     } catch (error) {
       console.log(error)
     } finally {
-      setIsProductLoading(false)
+      setLoading(false)
     }
   }
 
@@ -29,11 +29,11 @@ const useProducts = () => {
 */
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     onInit()
   }, [])
 
-  return { products, isProductLoading }
+  return { products, areProductsLoading }
 }
 
 export default useProducts
