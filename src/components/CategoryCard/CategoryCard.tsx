@@ -1,4 +1,4 @@
-import { Category } from "@/store/features/cartState"
+import { Category } from "@/types"
 import { generateSlug } from "@/utils"
 import { FC } from "react"
 import { Link } from "react-router-dom"
@@ -11,7 +11,7 @@ const CategoryCard: FC<Props> = ({ category }: Props) => {
   return (
     <Link
       to={`/category/${slug}`}
-      className="bg-slate-700 rounded-lg p-3 shadow-2xl w-full h-[220px] md:w-[220px]">
+      className="bg-primary rounded-lg p-3 shadow-2xl w-full h-[220px] md:w-[220px] text-white">
       {category.name}
     </Link>
   )

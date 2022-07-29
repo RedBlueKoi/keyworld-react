@@ -1,6 +1,11 @@
 import { FC } from "react"
+import { Product } from "@/types"
 
-const Product: FC = () => {
+interface Props {
+  product?: Product
+}
+
+const Product: FC<Props> = ({ product }: Props) => {
   return (
     <div>
       {/* This will utilize product component */}
