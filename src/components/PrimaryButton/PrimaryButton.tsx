@@ -13,7 +13,7 @@ interface Props {
 const PrimaryButton: FC<Props> = (props: Props) => {
   const { children, type, disabled, onClick, isFloating, color, className } =
     props
-  const styles: string = useMemo(() => {
+  const styles = useMemo<string>(() => {
     const styleArray = [
       "px-6",
       "h-10",
@@ -24,7 +24,8 @@ const PrimaryButton: FC<Props> = (props: Props) => {
       "rounded-md"
     ]
     if (isFloating) styleArray.push("shadow-md shadow-primary")
-    styleArray.push(color ? "bg-accent" : "bg-primary")
+    if (disabled) styleArray.push("bg-slate-500 opacity-30")
+    if (!disabled) styleArray.push(color ? "bg-accent" : "bg-primary")
     return [...styleArray, className].join(" ")
   }, [isFloating, color, className])
   return (
