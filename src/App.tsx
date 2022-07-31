@@ -4,7 +4,7 @@ import About from "./views/About"
 import Home from "./views/Home"
 import Checkout from "./views/Checkout"
 import NotFound from "./views/NotFound"
-import Product from "./views/Product"
+import ProductView from "./views/ProductView"
 import Success from "./views/Success"
 import Category from "./views/Category"
 import Icon from "@mdi/react"
@@ -30,7 +30,7 @@ function App() {
           <Route path="category/:categoryUrl" element={<Category />} />
           <Route
             path="category/:categoryUrl/:productUrl"
-            element={<Product />}
+            element={<ProductView />}
           />
           <Route path="success" element={<Success />} />
           <Route path="*" element={<NotFound />} />

@@ -5,7 +5,7 @@ interface Props {
   product?: Product
 }
 
-const Product: FC<Props> = ({ product }: Props) => {
+const ProductView: FC<Props> = ({ product }: Props) => {
   return (
     <div>
       {/* This will utilize product component */}
@@ -14,4 +14,4 @@ const Product: FC<Props> = ({ product }: Props) => {
   )
 }
 
-export default Product
+export default ProductView
