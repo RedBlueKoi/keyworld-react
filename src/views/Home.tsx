@@ -5,7 +5,7 @@ import { useCategories } from "@/custom-hooks/api"
 
 const Home: FC = () => {
   const { categories, areCategoriesLoading } = useCategories()
-  const reanderedCategories = useMemo(() => {
+  const renderedCategories = useMemo(() => {
     return categories.map((category) => (
       <CategoryCard category={category} key={category.name} />
     ))
@@ -18,7 +18,7 @@ const Home: FC = () => {
     <div>
       <PageTitle title="Categories" />
       <div className="flex space-between gap-3 flex-wrap px-3">
-        {reanderedCategories}
+        {renderedCategories}
       </div>
     </div>
   )
