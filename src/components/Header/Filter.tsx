@@ -1,25 +1,19 @@
-import useIsMobile from "@/custom-hooks/useIsMobile"
 import { FC, useState } from "react"
 
 const Filter: FC = () => {
-  const isMobile = useIsMobile()
   const [mobileFilterVisible, setMobileFilterVisible] = useState(false)
   const filterClassSet = new Set()
 
-  filterClassSet.delete("hidden")
-  if (isMobile && !mobileFilterVisible) {
-    filterClassSet.add("hidden")
-  }
-
-  filterClassSet.delete("absolute left-0 top-20")
-  if (isMobile && mobileFilterVisible) {
-    filterClassSet.add("absolute left-0 top-20")
+  filterClassSet.add("max-sm:hidden")
+  if (mobileFilterVisible) {
+    filterClassSet.delete("max-sm:hidden")
   }
 
   const filterClass = Array.from(filterClassSet).join(" ")
   return (
     <>
-      <div className={`w-full max-w-[830px] sm:block ${filterClass}`}>
+      <div
+        className={`w-full max-w-[830px] max-sm:absolute max-sm:left-0 max-sm:top-20 max-sm:block ${filterClass}`}>
         <div className="relative">
           <input
             type="search"

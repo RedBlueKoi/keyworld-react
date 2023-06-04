@@ -5,9 +5,7 @@ interface Props {
 }
 const CloseMenuButton: FC<Props> = ({ onClick }: Props) => {
   return (
-    <button
-      onClick={onClick}
-      className="text-primary w-4 h-4 absolute top-5 right-5 z-20">
+    <button onClick={onClick} className="w-4 h-4 absolute top-5 right-5 z-20">
       <svg
         fill="none"
         stroke="currentColor"

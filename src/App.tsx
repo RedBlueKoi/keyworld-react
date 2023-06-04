@@ -7,8 +7,8 @@ import NotFound from "./views/NotFound"
 import ProductView from "./views/ProductView"
 import Success from "./views/Success"
 import Category from "./views/Category"
-import { Footer } from "./components/footer"
-import { Header } from "./components/Header"
+import Header from "./components/Header"
+import Footer from "./components/footer"
 
 function App() {
   return (
