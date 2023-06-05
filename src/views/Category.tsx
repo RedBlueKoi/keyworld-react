@@ -1,9 +1,15 @@
 // import ProductCard from "@/components/ProductCard/ProductCard"
-import useProducts from "@/custom-hooks/api/useProducts"
+import { useMemo } from "react"
+import { PageTitle } from "@/components/layout"
+import { useCategories, useProducts } from "@/custom-hooks/api"
+import { generateSlug } from "@/utils"
+import { useParams } from "react-router-dom"
 // import { FC, useMemo } from "react"
 
 const Category = () => {
+  const { categories, areCategoriesLoading } = useCategories()
   const { products, areProductsLoading } = useProducts({})
+  const params = useParams()
 
   // const renderProducts = useMemo(() => {
   //   return products.map((item) => (
@@ -11,10 +17,23 @@ const Category = () => {
   //   ))
   // }, [products])
 
-  if (areProductsLoading) return <div>Products are loading</div>
-  // if (!products.length) return <div>Can't find any products</div>
+  const isLoading = useMemo(() => {
+    if (areCategoriesLoading || areProductsLoading) return true
+    return false
+  }, [areCategoriesLoading, areProductsLoading])
 
-  return <div className="flex flex-wrap place-content-center">Category</div>
+  if (isLoading) return <div>Loading...</div>
+
+  const category = categories.find((category) => {
+    return generateSlug(category.name) === params.categoryUrl
+  })
+  if (!category) return <div>Can`t find any products</div>
+
+  return (
+    <div className="px-2 md:px-4">
+      <PageTitle title={category.name} />
+    </div>
+  )
 }
 
 export default Category
